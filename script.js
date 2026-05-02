@@ -562,6 +562,59 @@ document.querySelectorAll('.topnav span').forEach((span, i) => {
 });
 
 
+/* === USE TEMPLATE MODAL === */
+const modalOverlay   = document.getElementById('modalOverlay');
+const useTemplateBtn = document.getElementById('useTemplateBtn');
+const modalClose     = document.getElementById('modalClose');
+
+function openModal() {
+  modalOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  modalOverlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+useTemplateBtn?.addEventListener('click', openModal);
+modalClose?.addEventListener('click', closeModal);
+
+// Close on backdrop click
+modalOverlay?.addEventListener('click', e => {
+  if (e.target === modalOverlay) closeModal();
+});
+
+// Close on Escape key
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && modalOverlay?.classList.contains('open')) closeModal();
+});
+
+// Add modal buttons to cursor hover effect
+document.querySelectorAll('.promo-btn, .modal-close').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    cursor.style.width      = '40px';
+    cursor.style.height     = '40px';
+    cursor.style.background = 'rgba(232,201,122,0.8)';
+    cursorTrail.style.opacity = '0.2';
+  });
+  el.addEventListener('mouseleave', () => {
+    cursor.style.width      = '12px';
+    cursor.style.height     = '12px';
+    cursor.style.background = AD_CONFIG.palette.rose;
+    cursorTrail.style.opacity = '0.7';
+  });
+});
+
+// Scroll to promo section on page load if #use-template hash present
+if (window.location.hash === '#use-template') {
+  setTimeout(() => {
+    document.getElementById('promoCta')?.scrollIntoView({ behavior: 'smooth' });
+    openModal();
+  }, 800);
+}
+
+
 /* === CONSOLE EASTER EGG (brand-aware) === */
 const C = AD_CONFIG;
 console.log(`%c ${C.brand.name} ✦`, 'color:' + C.palette.rose + ';font-size:18px;font-weight:bold;font-family:Georgia');

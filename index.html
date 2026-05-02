@@ -145,6 +145,112 @@
     <footer class="footer-bar" id="footerBar"></footer>
   </section>
 
+  <!-- ===== TEMPLATE PROMO CTA (BOTTOM) ===== -->
+  <section class="promo-cta" id="promoCta">
+    <div class="promo-inner">
+
+      <div class="promo-left">
+        <div class="promo-badge">
+          <span class="promo-badge-dot"></span>
+          Premium template
+        </div>
+        <h2 class="promo-headline">Use This Premium Template</h2>
+        <p class="promo-sub">Modern, responsive, elegant landing page template ready for your next project.</p>
+        <p class="promo-trust">
+          <span>Free to explore</span>
+          <span class="promo-trust-dot"></span>
+          <span>Easy to customize</span>
+          <span class="promo-trust-dot"></span>
+          <span>Built by Azmi Adan</span>
+        </p>
+      </div>
+
+      <div class="promo-right">
+        <div class="promo-buttons">
+
+          <!-- Live Demo → deployed site -->
+          <a href="https://azmi-adan.github.io/LUMI-RE/" target="_blank" rel="noopener" class="promo-btn promo-btn-primary">
+            <span class="promo-btn-icon">▶</span> Live Demo
+          </a>
+
+          <!-- View Source Code → GitHub repo -->
+          <a href="https://github.com/azmi-adan/LUMI-RE" target="_blank" rel="noopener" class="promo-btn promo-btn-outline">
+            <span class="promo-btn-icon">{ }</span> View Source Code
+          </a>
+
+          <!-- Use This Template → triggers modal -->
+          <button class="promo-btn promo-btn-teal" id="useTemplateBtn">
+            <span class="promo-btn-icon">↓</span> Use This Template
+          </button>
+
+          <!-- Hire Developer → mailto -->
+          <a href="mailto:azmiadan@example.com?subject=I'd like to hire you&body=Hi Azmi, I found your template and I'd love to work with you on a project." class="promo-btn promo-btn-purple">
+            <span class="promo-btn-icon">✉</span> Hire Developer
+          </a>
+
+        </div>
+
+        <div class="promo-stats">
+          <div class="promo-stat"><span class="promo-stat-num">4</span><span class="promo-stat-label">Files only</span></div>
+          <div class="promo-stat"><span class="promo-stat-num">100%</span><span class="promo-stat-label">Responsive</span></div>
+          <div class="promo-stat"><span class="promo-stat-num">6</span><span class="promo-stat-label">Shade variants</span></div>
+          <div class="promo-stat"><span class="promo-stat-num">0</span><span class="promo-stat-label">Dependencies</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== USE TEMPLATE MODAL ===== -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box" id="modalBox">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-icon">↓</div>
+      <h3 class="modal-title">Get the Template</h3>
+      <p class="modal-body">Clone or fork the repo from GitHub — everything is already set up. Edit <code>config.js</code> to make it yours.</p>
+
+      <div class="modal-steps">
+        <div class="modal-step">
+          <span class="modal-step-num">1</span>
+          <div>
+            <strong>Fork the repo</strong>
+            <p>Click Fork on GitHub to copy it to your account</p>
+          </div>
+        </div>
+        <div class="modal-step">
+          <span class="modal-step-num">2</span>
+          <div>
+            <strong>Clone it locally</strong>
+            <code class="modal-code">git clone https://github.com/azmi-adan/LUMI-RE.git</code>
+          </div>
+        </div>
+        <div class="modal-step">
+          <span class="modal-step-num">3</span>
+          <div>
+            <strong>Edit config.js only</strong>
+            <p>Change brand name, colours, shades, copy — done.</p>
+          </div>
+        </div>
+        <div class="modal-step">
+          <span class="modal-step-num">4</span>
+          <div>
+            <strong>Deploy anywhere</strong>
+            <p>GitHub Pages, Netlify, Vercel — zero dependencies.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <a href="https://github.com/azmi-adan/LUMI-RE/fork" target="_blank" rel="noopener" class="promo-btn promo-btn-primary modal-action-btn">
+          Fork on GitHub →
+        </a>
+        <a href="https://github.com/azmi-adan/LUMI-RE" target="_blank" rel="noopener" class="promo-btn promo-btn-outline modal-action-btn">
+          View Repo
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- config.js MUST load before script.js -->
   <script src="config.js"></script>
   <script src="script.js"></script>
