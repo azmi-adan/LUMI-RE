@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>L'Oréal — Gloss Infaillible</title>
+  <title id="pageTitle">Ad Template</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Bebas+Neue&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet" />
@@ -17,237 +17,113 @@
 
   <!-- Particle canvas -->
   <canvas id="particleCanvas"></canvas>
-
-  <!-- Noise overlay -->
   <div class="noise-overlay"></div>
 
-  <!-- ===== HERO SECTION ===== -->
+  <!-- ===== HERO ===== -->
   <section class="hero" id="hero">
-
-    <!-- Background liquid blobs -->
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
     <div class="blob blob-4"></div>
 
-    <!-- Top bar -->
     <header class="topbar">
-      <span class="brand-tag">L'ORÉAL PARIS</span>
-      <nav class="topnav">
-        <span>Collection</span>
-        <span>Shades</span>
-        <span>Ritual</span>
-      </nav>
+      <span class="brand-tag" id="brandTag"></span>
+      <nav class="topnav" id="topNav"></nav>
     </header>
 
-    <!-- Main hero content -->
     <div class="hero-content">
 
-      <!-- Left column -->
+      <!-- LEFT -->
       <div class="hero-left" id="heroLeft">
         <div class="eyebrow-line">
           <span class="eyebrow-dot"></span>
-          <span class="eyebrow-text">NEW 2025 FORMULA</span>
+          <span class="eyebrow-text" id="productBadge"></span>
         </div>
         <h1 class="hero-title">
-          <span class="title-line line-1">GLOSS</span>
-          <span class="title-line line-2"><em>Infaillible</em></span>
-          <span class="title-line line-3">36H PLUMP</span>
+          <span class="title-line line-1" id="titleLine1"></span>
+          <span class="title-line line-2"><em id="titleLine2"></em></span>
+          <span class="title-line line-3" id="titleLine3"></span>
         </h1>
-        <p class="hero-sub">A revolutionary lip gloss that delivers<br/>mirror-shine hydration for up to <strong>36 hours.</strong></p>
-
+        <p class="hero-sub" id="heroDesc"></p>
         <div class="cta-group">
           <button class="btn-primary" id="ctaBtn">
-            <span class="btn-text">SHOP NOW</span>
+            <span class="btn-text" id="ctaPrimaryText"></span>
             <span class="btn-shine"></span>
           </button>
-          <button class="btn-ghost">Explore Shades →</button>
+          <button class="btn-ghost" id="ctaGhostBtn"></button>
         </div>
-
-        <!-- Shade swatches -->
         <div class="swatches" id="swatches">
           <span class="swatch-label">SELECT SHADE</span>
-          <div class="swatch-row">
-            <div class="swatch active" data-shade="0" style="--c:#C94060" title="Rouge Passion"></div>
-            <div class="swatch" data-shade="1" style="--c:#E87C8A" title="Blush Fleur"></div>
-            <div class="swatch" data-shade="2" style="--c:#9B2250" title="Cerise Nuit"></div>
-            <div class="swatch" data-shade="3" style="--c:#F4A9B8" title="Petal Kiss"></div>
-            <div class="swatch" data-shade="4" style="--c:#7D1B3C" title="Bordeaux"></div>
-            <div class="swatch" data-shade="5" style="--c:#E84E78" title="Coral Rouge"></div>
-          </div>
+          <div class="swatch-row" id="swatchRow"></div>
         </div>
       </div>
 
-      <!-- Center: 3D product -->
+      <!-- CENTER: 3D tube (structural — never changes) -->
       <div class="hero-center" id="heroCenter">
         <div class="product-scene" id="productScene">
           <div class="product-wrapper" id="productWrapper">
-
-            <!-- Shadow plane -->
             <div class="shadow-plane"></div>
-
-            <!-- Main tube -->
             <div class="tube-container" id="tubeContainer">
-
-              <!-- The tube body -->
               <div class="tube">
                 <div class="tube-cap"></div>
                 <div class="tube-neck"></div>
-                <div class="tube-body">
+                <div class="tube-body" id="tubeBody">
                   <div class="tube-label">
-                    <div class="label-brand">L'ORÉAL</div>
-                    <div class="label-name">GLOSS</div>
-                    <div class="label-sub">INFAILLIBLE</div>
+                    <div class="label-brand" id="labelBrand"></div>
+                    <div class="label-name"  id="labelName"></div>
+                    <div class="label-sub"   id="labelSub"></div>
                     <div class="label-stripe"></div>
                   </div>
                   <div class="tube-shine-strip"></div>
                   <div class="tube-shine-strip-2"></div>
                 </div>
-                <div class="tube-tip">
-                  <div class="tip-gloss"></div>
-                </div>
+                <div class="tube-tip"><div class="tip-gloss"></div></div>
               </div>
-
-              <!-- Orbiting sparkles -->
               <div class="orbit orbit-1"><div class="sparkle s1">✦</div></div>
               <div class="orbit orbit-2"><div class="sparkle s2">✦</div></div>
               <div class="orbit orbit-3"><div class="sparkle s3">★</div></div>
               <div class="orbit orbit-4"><div class="sparkle s4">✦</div></div>
-
-              <!-- Floating gloss drops -->
               <div class="gloss-drop drop-1"></div>
               <div class="gloss-drop drop-2"></div>
               <div class="gloss-drop drop-3"></div>
-
             </div>
-
-            <!-- Halo ring -->
             <div class="halo-ring halo-1"></div>
             <div class="halo-ring halo-2"></div>
             <div class="halo-ring halo-3"></div>
-
           </div>
         </div>
       </div>
 
-      <!-- Right column -->
+      <!-- RIGHT -->
       <div class="hero-right" id="heroRight">
-        <div class="stat-card" style="--delay:0s">
-          <span class="stat-num">36<em>H</em></span>
-          <span class="stat-desc">Long-lasting shine</span>
-        </div>
-        <div class="stat-card" style="--delay:0.15s">
-          <span class="stat-num">8×</span>
-          <span class="stat-desc">More hydration</span>
-        </div>
-        <div class="stat-card" style="--delay:0.3s">
-          <span class="stat-num">+2<em>mm</em></span>
-          <span class="stat-desc">Plumping effect</span>
-        </div>
-
+        <div id="statCards"></div>
         <div class="ingredients-tag">
           <span class="ing-label">KEY INGREDIENTS</span>
-          <div class="ing-pills">
-            <span class="pill">Hyaluronic Acid</span>
-            <span class="pill">Rose Extract</span>
-            <span class="pill">Ceramides</span>
-          </div>
+          <div class="ing-pills" id="ingPills"></div>
         </div>
-
-        <div class="rating-block">
-          <div class="stars">★★★★★</div>
-          <span class="rating-text">4.9 / 5 — 12,840 reviews</span>
-        </div>
+        <div class="rating-block" id="ratingBlock"></div>
       </div>
 
     </div>
 
-    <!-- Bottom ticker -->
     <div class="ticker-wrap">
-      <div class="ticker-track" id="tickerTrack">
-        <span>GLOSS INFAILLIBLE &nbsp;✦&nbsp; 36H SHINE &nbsp;✦&nbsp; PLUMPING FORMULA &nbsp;✦&nbsp; L'ORÉAL PARIS &nbsp;✦&nbsp; MIRROR FINISH &nbsp;✦&nbsp; HYDRATION BOOST &nbsp;✦&nbsp; 6 SHADES &nbsp;✦&nbsp; GLOSS INFAILLIBLE &nbsp;✦&nbsp; 36H SHINE &nbsp;✦&nbsp; PLUMPING FORMULA &nbsp;✦&nbsp; L'ORÉAL PARIS &nbsp;✦&nbsp; MIRROR FINISH &nbsp;✦&nbsp; HYDRATION BOOST &nbsp;✦&nbsp; 6 SHADES &nbsp;✦&nbsp;</span>
-      </div>
+      <div class="ticker-track" id="tickerTrack"></div>
     </div>
-
   </section>
 
-  <!-- ===== FEATURE STRIP ===== -->
+  <!-- ===== FEATURES ===== -->
   <section class="features" id="features">
-    <div class="feat-bg-text">GLOSS</div>
-    <div class="feat-grid">
-      <div class="feat-item" data-aos>
-        <div class="feat-icon">💋</div>
-        <h3>Mirror Shine</h3>
-        <p>Ultra-reflective formula that catches every light for camera-ready lips.</p>
-      </div>
-      <div class="feat-item" data-aos style="--ao:0.1s">
-        <div class="feat-icon">💧</div>
-        <h3>36H Hydration</h3>
-        <p>Hyaluronic acid complex locks in moisture through every hour of the day.</p>
-      </div>
-      <div class="feat-item" data-aos style="--ao:0.2s">
-        <div class="feat-icon">🌹</div>
-        <h3>Rose Extract</h3>
-        <p>Wild rose oil softens and conditions for lips that feel as good as they look.</p>
-      </div>
-      <div class="feat-item" data-aos style="--ao:0.3s">
-        <div class="feat-icon">✨</div>
-        <h3>Plump Effect</h3>
-        <p>Peptide complex visibly plumps and defines the lip line instantly.</p>
-      </div>
-    </div>
+    <div class="feat-bg-text" id="featBgText"></div>
+    <div class="feat-grid" id="featGrid"></div>
   </section>
 
-  <!-- ===== SHADE SHOWCASE ===== -->
+  <!-- ===== SHADES SECTION ===== -->
   <section class="shades-section" id="shadesSection">
     <div class="shades-header">
-      <p class="shades-eyebrow">THE COLLECTION</p>
-      <h2 class="shades-title">Six Shades.<br/><em>One Obsession.</em></h2>
+      <p class="shades-eyebrow" id="shadesEyebrow"></p>
+      <h2 class="shades-title" id="shadesTitle"></h2>
     </div>
-    <div class="shades-carousel" id="shadesCarousel">
-      <div class="shade-card" data-color="#C94060">
-        <div class="shade-orb"></div>
-        <div class="shade-info">
-          <span class="shade-num">01</span>
-          <span class="shade-name">Rouge Passion</span>
-        </div>
-      </div>
-      <div class="shade-card" data-color="#E87C8A">
-        <div class="shade-orb"></div>
-        <div class="shade-info">
-          <span class="shade-num">02</span>
-          <span class="shade-name">Blush Fleur</span>
-        </div>
-      </div>
-      <div class="shade-card" data-color="#9B2250">
-        <div class="shade-orb"></div>
-        <div class="shade-info">
-          <span class="shade-num">03</span>
-          <span class="shade-name">Cerise Nuit</span>
-        </div>
-      </div>
-      <div class="shade-card" data-color="#F4A9B8">
-        <div class="shade-orb"></div>
-        <div class="shade-info">
-          <span class="shade-num">04</span>
-          <span class="shade-name">Petal Kiss</span>
-        </div>
-      </div>
-      <div class="shade-card" data-color="#7D1B3C">
-        <div class="shade-orb"></div>
-        <div class="shade-info">
-          <span class="shade-num">05</span>
-          <span class="shade-name">Bordeaux</span>
-        </div>
-      </div>
-      <div class="shade-card" data-color="#E84E78">
-        <div class="shade-orb"></div>
-        <div class="shade-info">
-          <span class="shade-num">06</span>
-          <span class="shade-name">Coral Rouge</span>
-        </div>
-      </div>
-    </div>
+    <div class="shades-carousel" id="shadesCarousel"></div>
   </section>
 
   <!-- ===== FINAL CTA ===== -->
@@ -257,24 +133,20 @@
       <div class="fb fb-2"></div>
     </div>
     <div class="final-content">
-      <p class="final-eyebrow">BECAUSE YOU'RE WORTH IT</p>
-      <h2 class="final-headline">Your lips.<br/><em>Unforgettable.</em></h2>
-      <p class="final-body">Available now at all L'Oréal stockists and loreal-paris.com</p>
+      <p class="final-eyebrow" id="finalEyebrow"></p>
+      <h2 class="final-headline" id="finalHeadline"></h2>
+      <p class="final-body"     id="finalBody"></p>
       <button class="btn-primary btn-large" id="finalCtaBtn">
-        <span class="btn-text">DISCOVER THE COLLECTION</span>
+        <span class="btn-text" id="finalCtaText"></span>
         <span class="btn-shine"></span>
       </button>
     </div>
-    <div class="final-price-tag">
-      <span class="price-from">from</span>
-      <span class="price-val">€12.99</span>
-    </div>
-    <footer class="footer-bar">
-      <span>© 2025 L'Oréal Paris. All rights reserved.</span>
-      <span>Paris, France</span>
-    </footer>
+    <div class="final-price-tag" id="priceTag"></div>
+    <footer class="footer-bar" id="footerBar"></footer>
   </section>
 
+  <!-- config.js MUST load before script.js -->
+  <script src="config.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

@@ -1013,9 +1013,25 @@ body:has(.btn-primary:hover) .cursor { width: 50px; height: 50px; background: va
   pointer-events: none;
 }
 
-.shade-card:hover {
+.shade-card:hover,
+.shade-card.shade-active {
   transform: translateY(-14px) scale(1.04);
   box-shadow: 0 24px 60px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.12);
+}
+
+.shade-card.shade-active::after {
+  content: '✦';
+  position: absolute;
+  top: 12px; right: 14px;
+  font-size: .7rem;
+  color: var(--gold);
+  filter: drop-shadow(0 0 4px var(--gold));
+  animation: starPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes starPulse {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: .5; transform: scale(.7); }
 }
 
 @keyframes shadeCardIn {
